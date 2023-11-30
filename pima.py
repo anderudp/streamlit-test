@@ -2,12 +2,12 @@ import streamlit as st
 from kaggle.api.kaggle_api_extended import KaggleApi
 import pandas as pd
 
+if __name__ == "__main__":
+    api = KaggleApi()
+    api.authenticate()
+    api.dataset_download_files('uciml/pima-indians-diabetes-database', unzip=True)
 
-api = KaggleApi()
-api.authenticate()
-api.dataset_download_files('uciml/pima-indians-diabetes-database', unzip=True)
+    df = pd.read_csv('diabetes.csv')
 
-df = pd.read_csv('diabetes.csv')
-
-st.title("Pima indians diabetes regression")
-st.selectbox("What field should we predict for?", df.columns.sort_values())
+    st.title("Pima indians diabetes regression")
+    st.selectbox("What field should we predict for?", df.columns.sort_values())
