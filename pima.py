@@ -11,3 +11,4 @@ if __name__ == "__main__":
 
     st.title("Pima indians diabetes regression")
     st.selectbox("What field should we predict for?", df.columns.sort_values())
+    
