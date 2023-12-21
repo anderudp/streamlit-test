@@ -1,5 +1,4 @@
 import streamlit as st
-from kaggle.api.kaggle_api_extended import KaggleApi
 import pandas as pd
 import numpy as np
 from scipy.stats import uniform
@@ -9,10 +8,6 @@ from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_sc
 
 
 if __name__ == "__main__":
-    # Getting the dataset
-    # api = KaggleApi()
-    # api.authenticate()
-    # api.dataset_download_files('uciml/pima-indians-diabetes-database', unzip=True)
     df = pd.read_csv('diabetes.csv')
     
     # Quick rename
